@@ -54,31 +54,35 @@ const _ = {
 
     // pad method
     pad(str, length) {
-        if(str.length >= length){
+        if (str.length >= length) {
             return str;
         }
         const strLength = str.length;
-        const startPad = Math.floor((length - strLength)/2);
+        const startPad = Math.floor((length - strLength) / 2);
         const endPad = length - strLength - startPad;
         return " ".repeat(startPad) + str + " ".repeat(endPad);
     },
 
     // has method
-    has(object, key){
+    has(object, key) {
         return object[key] !== undefined;
+    },
+
+    // invert method
+    invert(object) {
+        let invertedObject = {};
+        for (const key in object) {
+            const originalValue = object[key];
+            invertedObject = { originalValue: key };
+        }
+        return invertedObject;
+    },
+
+    // findKey method
+    findKey(object,predicate){
+        
     }
 };
-
-
-const test1 = _.clamp(10, -5, 5);
-const test2 = _.clamp(-10, -5, 5);
-const test3 = _.clamp(0, -5, 5);
-console.log(test1);
-console.log(test2);
-console.log(test3);
-
-console.log(_.inRange(3, 2, 4));
-console.log(_.inRange(4, 8));
 
 // Do not write or modify code below this line.
 module.exports = _;
