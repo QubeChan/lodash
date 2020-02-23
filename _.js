@@ -24,10 +24,10 @@ const _ = {
 
     // inRange method
     inRange(number, startVal, endVal) {
-        if (endVal === undefined){
+        if (endVal === undefined) {
             endVal = startVal;
             startVal = 0;
-        } else if(startVal>endVal){
+        } else if (startVal > endVal) {
             let temp = startVal;
             startVal = endVal;
             endVal = temp;
@@ -37,13 +37,13 @@ const _ = {
             return false;
         } else if (number >= endVal) {
             return false;
-        } else if (number >= startVal && number < endVal){
+        } else if (number >= startVal && number < endVal) {
             return true;
         }
     },
 
     // words method
-    words(str){
+    words(str) {
         // readability
         const words = str.split(" ");
         return words;
@@ -51,9 +51,20 @@ const _ = {
         // clean code
         return str.split(" ");
     },
-    
+
     // pad method
-    pad(str, length){
+    pad(str, length) {
+        if(str.length >= length){
+            return str;
+        }
+        const strLength = str.length;
+        const startPad = Math.floor((length - strLength)/2);
+        const endPad = length - strLength - startPad;
+        return " ".repeat(startPad) + str + " ".repeat(endPad);
+    },
+
+    // has method
+    had(){
         
     }
 };
