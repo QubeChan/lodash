@@ -64,8 +64,8 @@ const _ = {
     },
 
     // has method
-    had(){
-        
+    has(object, key){
+        return object[key] !== undefined;
     }
 };
 
