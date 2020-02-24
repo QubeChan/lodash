@@ -80,6 +80,15 @@ const _ = {
 
     // findKey method
     findKey(object,predicate){
+        for (const key in object) {
+            const value = object[key];
+            const predicateReturnValue = predicate(value);
+            return predicateReturnValue ? key : undefined;
+        }
+    },
+
+    // drop method
+    drop(arr,n){
         
     }
 };
