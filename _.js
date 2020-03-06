@@ -79,7 +79,7 @@ const _ = {
     },
 
     // findKey method
-    findKey(object,predicate){
+    findKey(object, predicate) {
         for (const key in object) {
             const value = object[key];
             const predicateReturnValue = predicate(value);
@@ -88,8 +88,12 @@ const _ = {
     },
 
     // drop method
-    drop(arr,n){
-        
+    drop(arr, n) {
+        if (n === undefined) {
+            n = 1;
+        }
+        let droppedArray = arr.slice(n,arr.length);
+        return droppedArray;
     }
 };
 
